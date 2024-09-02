@@ -1,0 +1,80 @@
+version: 2
+updates:
+  # Enable version updates for npm
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    # Check for updates to GitHub Actions
+    labels:
+      - "dependencies"
+      - "npm"
+    # Increase the version requirements for Snyk
+    versioning-strategy: increase
+
+  # Enable version updates for Docker
+  - package-ecosystem: "docker"
+    directory: "/docker"
+    schedule:
+      interval: "weekly"
+    # Assign reviewers
+    reviewers:
+      - "my-docker-expert"
+    # Increase the version requirements for Docker
+    versioning-strategy: increase
+
+  # Enable version updates for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    # Assign authors as reviewers
+    assignees:
+      - "my-github-actions-expert"
+    # Increase the version requirements for GitHub Actions
+    versioning-strategy: increase
+
+  # Enable version updates for Gradle
+  - package-ecosystem: "gradle"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    # Assign a team as reviewers
+    reviewers:
+      - "my-gradle-team"
+    # Increase the version requirements for Gradle
+    versioning-strategy: increase
+
+  # Enable version updates for Maven
+  - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    # Assign a specific reviewer
+    reviewers:
+      - "my-maven-expert"
+    # Increase the version requirements for Maven
+    versioning-strategy: increase
+
+  # Enable version updates for .NET
+  - package-ecosystem: "nuget"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    # Assign reviewers
+    reviewers:
+      - "my-dotnet-expert"
+    # Increase the version requirements for .NET packages
+    versioning-strategy: increase
+
+  # Enable version updates for npm (Astro.js)
+  - package-ecosystem: "npm"
+    directory: "/docs"
+    schedule:
+      interval: "daily"
+    # Check for updates to Astro.js and its dependencies
+    labels:
+      - "dependencies"
+      - "astro"
+    # Increase the version requirements for npm packages
+    versioning-strategy: increase
